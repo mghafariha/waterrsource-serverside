@@ -14,7 +14,7 @@ namespace WaterResource.Models
 
         [DisplayName("شماره پرونده")]
         [Required]
-        public int Index { get; set; }
+        public string Index { get; set; }
 
         [DisplayName("وضعیت فعلی چاه")]
         [Required]

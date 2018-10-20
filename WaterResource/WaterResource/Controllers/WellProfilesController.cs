@@ -35,6 +35,19 @@ namespace WaterResource.Controllers
             return Ok(wellProfile);
         }
 
+        // GET: api/WellProfiles/code
+        [ResponseType(typeof(WellProfile))]
+        public IHttpActionResult GetWellProfile(string code)
+        {
+            WellProfile wellProfile = db.WellProfiles.Where(a=>a.Index==code).FirstOrDefault();
+            if (wellProfile == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(wellProfile);
+        }
+
         // PUT: api/WellProfiles/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutWellProfile(int id, WellProfile wellProfile)

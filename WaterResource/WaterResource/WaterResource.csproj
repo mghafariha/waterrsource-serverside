@@ -230,12 +230,18 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AreaStudiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InspectionDepartmentsController.cs" />
+    <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeController.cs" />
     <Compile Include="Controllers\MetaDataController.cs" />
+    <Compile Include="Controllers\OtherTypesController.cs" />
+    <Compile Include="Controllers\PlainController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\WellProfilesController.cs" />
-    <Compile Include="Controllers\WellViolationItemsController.cs" />
+    <Compile Include="Controllers\WellViolationsItemsController.cs" />
     <Compile Include="Controllers\WellViolationsController.cs" />
     <Compile Include="Controllers\WellVisitedsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -245,14 +251,72 @@
     <Compile Include="Migrations\201809220948240_init.Designer.cs">
       <DependentUpon>201809220948240_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809250825459_add otherType.cs" />
+    <Compile Include="Migrations\201809250825459_add otherType.Designer.cs">
+      <DependentUpon>201809250825459_add otherType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809250903089_add baseInfo.cs" />
+    <Compile Include="Migrations\201809250903089_add baseInfo.Designer.cs">
+      <DependentUpon>201809250903089_add baseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809291231237_tmp.cs" />
+    <Compile Include="Migrations\201809291231237_tmp.Designer.cs">
+      <DependentUpon>201809291231237_tmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809291252058_002.cs" />
+    <Compile Include="Migrations\201809291252058_002.Designer.cs">
+      <DependentUpon>201809291252058_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809300716345_003.cs" />
+    <Compile Include="Migrations\201809300716345_003.Designer.cs">
+      <DependentUpon>201809300716345_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810010852254_004.cs" />
+    <Compile Include="Migrations\201810010852254_004.Designer.cs">
+      <DependentUpon>201810010852254_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810021129109_005.cs" />
+    <Compile Include="Migrations\201810021129109_005.Designer.cs">
+      <DependentUpon>201810021129109_005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810031237094_change model wellviolationsitems.cs" />
+    <Compile Include="Migrations\201810031237094_change model wellviolationsitems.Designer.cs">
+      <DependentUpon>201810031237094_change model wellviolationsitems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810031246164_change2 model wellviolationsitems.cs" />
+    <Compile Include="Migrations\201810031246164_change2 model wellviolationsitems.Designer.cs">
+      <DependentUpon>201810031246164_change2 model wellviolationsitems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810061102481_006.cs" />
+    <Compile Include="Migrations\201810061102481_006.Designer.cs">
+      <DependentUpon>201810061102481_006.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810070836183_007.cs" />
+    <Compile Include="Migrations\201810070836183_007.Designer.cs">
+      <DependentUpon>201810070836183_007.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810090714057_008.cs" />
+    <Compile Include="Migrations\201810090714057_008.Designer.cs">
+      <DependentUpon>201810090714057_008.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810090804052_009.cs" />
+    <Compile Include="Migrations\201810090804052_009.Designer.cs">
+      <DependentUpon>201810090804052_009.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AreaStudy.cs" />
+    <Compile Include="Models\Attachment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\InspectionDepartments.cs" />
+    <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MeViewModels.cs" />
+    <Compile Include="Models\OtherType.cs" />
+    <Compile Include="Models\Plain.cs" />
     <Compile Include="Models\WellProfile.cs" />
     <Compile Include="Models\WellViolation.cs" />
-    <Compile Include="Models\WellViolationItems.cs" />
+    <Compile Include="Models\WellViolationsItems.cs" />
     <Compile Include="Models\WellVisited.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -268,6 +332,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\axios.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -308,6 +373,10 @@
     <Content Include="Scripts\app\app.viewmodel.js" />
     <Content Include="Scripts\app\common.js" />
     <Content Include="Scripts\app\home.viewmodel.js" />
+    <Content Include="static\css\main.3743ec33.css" />
+    <Content Include="static\js\main.67f0b068.js" />
+    <Content Include="static\media\fontawesome-webfont.912ec66d.svg" />
+    <Content Include="static\media\Yekan.77c6c4d7.svg" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -345,9 +414,20 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="static\css\main.3743ec33.css.map" />
+    <Content Include="static\js\main.67f0b068.js.map" />
+    <Content Include="static\media\fontawesome-webfont.674f50d2.eot" />
+    <Content Include="static\media\fontawesome-webfont.af7ae505.woff2" />
+    <Content Include="static\media\fontawesome-webfont.b06871f2.ttf" />
+    <Content Include="static\media\fontawesome-webfont.fee66e71.woff" />
+    <Content Include="static\media\Yekan.05727d32.woff" />
+    <Content Include="static\media\Yekan.1008c3b8.ttf" />
+    <Content Include="static\media\Yekan.1ce443bd.eot" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="uploadedFiles\" />
+    <Folder Include="Views\InspectionDepartments\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -360,6 +440,45 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809220948240_init.resx">
       <DependentUpon>201809220948240_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809250825459_add otherType.resx">
+      <DependentUpon>201809250825459_add otherType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809250903089_add baseInfo.resx">
+      <DependentUpon>201809250903089_add baseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809291231237_tmp.resx">
+      <DependentUpon>201809291231237_tmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809291252058_002.resx">
+      <DependentUpon>201809291252058_002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809300716345_003.resx">
+      <DependentUpon>201809300716345_003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810010852254_004.resx">
+      <DependentUpon>201810010852254_004.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810021129109_005.resx">
+      <DependentUpon>201810021129109_005.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810031237094_change model wellviolationsitems.resx">
+      <DependentUpon>201810031237094_change model wellviolationsitems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810031246164_change2 model wellviolationsitems.resx">
+      <DependentUpon>201810031246164_change2 model wellviolationsitems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810061102481_006.resx">
+      <DependentUpon>201810061102481_006.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810070836183_007.resx">
+      <DependentUpon>201810070836183_007.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810090714057_008.resx">
+      <DependentUpon>201810090714057_008.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810090804052_009.resx">
+      <DependentUpon>201810090804052_009.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

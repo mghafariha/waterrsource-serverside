@@ -149,7 +149,7 @@ namespace WaterResource.Models
 
         [DisplayName("شهرستان")]
         [Required]
-        public int City { get; set; }
+        public String City { get; set; }
 
         [DisplayName("کنتور")]
         [Required]
@@ -205,6 +205,11 @@ namespace WaterResource.Models
 
         [DisplayName("توضیحات")]
         public string Description { get; set; }
+
+
+        [DisplayName("هدایت الکتریکی")]
+        [Required]
+        public decimal EC { get; set; }
 
     }
 }

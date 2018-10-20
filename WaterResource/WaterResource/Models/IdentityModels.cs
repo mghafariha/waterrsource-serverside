@@ -38,6 +38,16 @@ namespace WaterResource.Models
 
         public System.Data.Entity.DbSet<WaterResource.Models.WellViolation> WellViolations { get; set; }
 
-        public System.Data.Entity.DbSet<WaterResource.Models.WellViolationItems> WellViolationItems { get; set; }
+        public System.Data.Entity.DbSet<WaterResource.Models.WellViolationsItems> WellViolationItems { get; set; }
+
+        public System.Data.Entity.DbSet<WaterResource.Models.OtherType> OtherType { get; set; }
+
+        public System.Data.Entity.DbSet<WaterResource.Models.AreaStudy> AreaStudies { get; set; }
+
+        public System.Data.Entity.DbSet<WaterResource.Models.Plain> Plains { get; set; }
+
+        public System.Data.Entity.DbSet<WaterResource.Models.InspectionDepartments> InspectionDepartments { get; set; }
+
+        public System.Data.Entity.DbSet<WaterResource.Models.Item> Items { get; set; }
     }
 }

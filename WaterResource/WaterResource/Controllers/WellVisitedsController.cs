@@ -35,6 +35,18 @@ namespace WaterResource.Controllers
             return Ok(wellVisited);
         }
 
+        // GET: api/GetWellVisited/code
+        [ResponseType(typeof(WellVisited))]
+        public IHttpActionResult GetWellVisited(string code)
+        {
+            WellVisited wellVisited = db.WellVisiteds.Where(a => a.Index == code).ToList().OrderByDescending(a => a.DateRegistration).FirstOrDefault();
+            if (wellVisited == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(wellVisited);
+        }
         // PUT: api/WellVisiteds/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutWellVisited(int id, WellVisited wellVisited)

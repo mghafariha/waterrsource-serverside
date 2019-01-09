@@ -19,7 +19,7 @@ namespace WaterResource.Controllers
     {
         // GET: api/metaData
         private ApplicationDbContext db = new ApplicationDbContext();
-       //[Authorize]
+        //[Authorize]
         public IQueryable<MetaData> GetMetaData(int id)
         {
             List<MetaData> lst = new List<MetaData>();
@@ -43,10 +43,6 @@ namespace WaterResource.Controllers
                     propertyInfos = typeof(WellViolationsItems).GetProperties();
                     cName = "WellViolationItems";
                     break;
-                case 5:
-                    propertyInfos = typeof(Item).GetProperties();
-                    cName = "Item";
-                    break;
                 //case 5:
                 //    propertyInfos = typeof(WellProfile).GetProperties();
                 //    break;
@@ -58,38 +54,42 @@ namespace WaterResource.Controllers
             }
 
             List<OtherType> others = db.OtherType.Where(a => a.ClassName == cName).ToList();
-         
+
             // write property names
             foreach (PropertyInfo propertyInfo in propertyInfos)
             {
-                var d = propertyInfo.GetCustomAttributes(typeof(DisplayNameAttribute), true);
-                var r = propertyInfo.CustomAttributes.Where(a => a.AttributeType.Name == "RequiredAttribute");
-                var o = others.Where(a => a.FieldName == propertyInfo.Name);
-                if (o.Count() > 0)
-                    lst.Add(new MetaData()
-                    {
-                        Name = propertyInfo.Name,
-                        DisplayName = d.Length > 0 ? d.Cast<DisplayNameAttribute>().Single().DisplayName : propertyInfo.Name,
-                        Required = r.Count() > 0 ? true : false,
-                        Type =o.FirstOrDefault().Type,
-                        Options= o.FirstOrDefault().Options,
-                        IsMulti= o.FirstOrDefault().IsMultiple,
-                        TitleField=o.FirstOrDefault().TitleField
-                    });
-                else
-                lst.Add(new MetaData()
+                if (propertyInfo.GetMethod.IsVirtual == false)
                 {
-                    Name = propertyInfo.Name,
-                    DisplayName = d.Length > 0 ? d.Cast<DisplayNameAttribute>().Single().DisplayName : propertyInfo.Name,
-                    Required = r.Count() > 0 ? true : false,
-                    Type = propertyInfo.PropertyType.Name
-                });
 
+
+                    var d = propertyInfo.GetCustomAttributes(typeof(DisplayNameAttribute), true);
+                    var r = propertyInfo.CustomAttributes.Where(a => a.AttributeType.Name == "RequiredAttribute");
+                    var o = others.Where(a => a.FieldName == propertyInfo.Name);
+                    if (o.Count() > 0)
+                        lst.Add(new MetaData()
+                        {
+                            Name = propertyInfo.Name,
+                            DisplayName = d.Length > 0 ? d.Cast<DisplayNameAttribute>().Single().DisplayName : propertyInfo.Name,
+                            Required = r.Count() > 0 ? true : false,
+                            Type = o.FirstOrDefault().Type,
+                            Options = o.FirstOrDefault().Options,
+                            IsMulti = o.FirstOrDefault().IsMultiple,
+                            TitleField = o.FirstOrDefault().TitleField
+                        });
+                    else
+                        lst.Add(new MetaData()
+                        {
+                            Name = propertyInfo.Name,
+                            DisplayName = d.Length > 0 ? d.Cast<DisplayNameAttribute>().Single().DisplayName : propertyInfo.Name,
+                            Required = r.Count() > 0 ? true : false,
+                            Type = propertyInfo.PropertyType.Name.IndexOf("Nullable") < 0 ? propertyInfo.PropertyType.Name : propertyInfo.PropertyType.GetGenericArguments()[0].Name
+                        });
+                }
             }
 
             return lst.AsQueryable<MetaData>();
         }
-       
+
         public class MetaData
         {
             public string Name { get; set; }
@@ -100,14 +100,15 @@ namespace WaterResource.Controllers
             public bool IsMulti { get; set; }
             public string TitleField { get; set; }
         }
-        public class attachment{
-            public string url{ get; set; }
+        public class attachment
+        {
+            public string url { get; set; }
             public string name { get; set; }
             public string description { get; set; }
-          
+
         }
-  
-    }  
-}  
-  
+
+    }
+}
+
 

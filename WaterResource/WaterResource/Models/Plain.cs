@@ -15,14 +15,17 @@ namespace WaterResource.Models
         [Required]
         public string Title { get; set; }
 
-        [DisplayName("شهرستان")]
-        [Required]
-        public string City { get; set; }
+        //[DisplayName("شهرستان")]
+        //[Required]
+        //public City City { get; set; }
 
         [DisplayName("محدوده مطالعاتی")]
         [Required]
-        public int AreaStudy { get; set; }
+        public int AreaStudyID { get; set; }
+        public AreaStudy AreaStudy { get; set; }
 
-      
+        [DisplayName("وضعیت بهره برداری")]
+        [Required]
+        public string Status { get; set; }
     }
 }

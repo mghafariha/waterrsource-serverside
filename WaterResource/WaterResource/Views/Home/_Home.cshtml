@@ -29,93 +29,52 @@
         </div>
     </div>
 *@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="~/static/css/1.6d399e51.chunk.css" rel="stylesheet" />
+    <link href="~/static/css/main.41ea253f.chunk.css" rel="stylesheet" />
+
+  
+    <link rel="stylesheet" href="~/static/out/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/static/out/css/AdminLTE.css">
+    <link rel="stylesheet" href="~/static/out/css/_all-skins.min.css">
+    <link rel="stylesheet" href="~/static/out/css/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
 
 
-<div class="row">
-    <div class="col-sm-6 col-md-3">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">چاه</h3>
-            </div>
-            <div class="panel-body">
-                <ul>
-                    <li>تست </li>
-                    <li>تست </li>
-                    <li>تست </li>
-                    <li>تست </li>
-                    <li>تست </li>
-                </ul>
-            </div>
-        </div>
+    <title>React App</title>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root" class="wrapper"></div>
+   
 
-    </div>
+    <script src="~/static/js/1.c93f4934.chunk.js"></script>
+    <script src="~/static/js/main.4268d339.chunk.js"></script>
+   
 
-    <div class="col-sm-6 col-md-3">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">چشمه</h3>
-            </div>
-            <div class="panel-body">
-                <ul>
-                    <li>تست </li>
-                    <li>تست </li>
-                    <li>تست </li>
-                    <li>تست </li>
-                    <li>تست </li>
-                </ul>
-            </div>
-        </div>
+    <script src="~/static/js/runtime~main.229c360f.js"></script>
 
-    </div>
-    <div class="col-sm-6 col-md-3">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">قنات</h3>
-            </div>
-            <div class="panel-body">
-                <ul>
-                    <li>تست </li>
-                    <li>تست </li>
-                    <li>تست </li>
-                    <li>تست </li>
-                    <li>تست </li>
-                </ul>
-            </div>
-        </div>
+    <script src="~/static/out/js/jquery.min.js"></script>
+    <script src="~/static/out/js/bootstrap.min.js"></script>
+    <script src="~/static/out/js/jquery.slimscroll.min.js"></script>
+    
 
-    </div>
-    <div class="col-sm-6 col-md-3">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">دستگاه حفاری</h3>
-            </div>
-            <div class="panel-body">
-              <ul>
-                  <li>تست </li>
-                  <li>تست </li>
-                  <li>تست </li>
-                  <li>تست </li>
-                  <li>تست </li>
-              </ul>
-            </div>
-        </div>
-
-    </div>
-
-
-</div>
+    <script src="~/static/out/js/adminlte.min.js"></script>
+    
+</html>
 
 
 
 
-        <title>React App</title><link href="~/static/css/main.3743ec33.css" rel="stylesheet">
 
 
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-
-        <script type="text/javascript" src="~/static/js/main.67f0b068.js"></script>
 
         <!-- /ko -->
         @*<script src="~/Scripts/jquery-1.10.2.js"></script>
@@ -128,9 +87,9 @@
                     }
                 }
                 $.ajax({
-                    type: 'DELETE',
-                    url: "/api/Items/1",
-                    //data: { "Title": "222" }
+                    type: 'GET',
+                    url: "/api/WellProfiles",
+                    data: { "count": 222,"page":10 }
 
                 }).then(function (a) {
                     console.log(a);

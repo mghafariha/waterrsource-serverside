@@ -19,7 +19,17 @@ namespace WaterResource.Controllers
         // GET: api/WellVisiteds
         public IQueryable<WellVisited> GetWellVisiteds()
         {
-            return db.WellVisiteds;
+            return db.WellVisiteds.Include(a => a.WellProfile);
+        }
+       [Queryable]
+        public IQueryable<WellVisited> GetWellVisiteds(int count,int page,int type=0)
+        {
+            if (type!=0)
+            {
+                string query = "SELECT *  FROM [WellVisiteds] where WellProfileID is null and id not in (select WellVisitedID from WellViolations)";
+                return db.WellVisiteds.SqlQuery(query).AsQueryable().Include(a => a.WellProfile).OrderBy(a => a.ID).Skip(count * (page - 1)).Take(count);
+            }
+            return db.WellVisiteds.Include(a => a.WellProfile).OrderBy(a=>a.ID).Skip(count*(page-1)).Take(count);
         }
 
         // GET: api/WellVisiteds/5
@@ -39,7 +49,8 @@ namespace WaterResource.Controllers
         [ResponseType(typeof(WellVisited))]
         public IHttpActionResult GetWellVisited(string code)
         {
-            WellVisited wellVisited = db.WellVisiteds.Where(a => a.Index == code).ToList().OrderByDescending(a => a.DateRegistration).FirstOrDefault();
+            //WellProfile profle = db.WellProfiles.Where(a => a.Index == code).ToList().FirstOrDefault();
+            WellVisited wellVisited = db.WellVisiteds.Where(a => a.WellProfile.Index == code).ToList().OrderByDescending(a => a.DateRegistration).FirstOrDefault();
             if (wellVisited == null)
             {
                 return NotFound();

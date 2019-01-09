@@ -105,6 +105,34 @@
     <Reference Include="Microsoft.Owin.Security.Twitter">
       <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -114,6 +142,10 @@
     </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportViewerForMvc, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReportViewerForMvc.1.1.1\lib\net45\ReportViewerForMvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -231,96 +263,56 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AreaStudiesController.cs" />
+    <Compile Include="Controllers\CitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InspectionDepartmentsController.cs" />
-    <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeController.cs" />
     <Compile Include="Controllers\MetaDataController.cs" />
     <Compile Include="Controllers\OtherTypesController.cs" />
     <Compile Include="Controllers\PlainController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\WellProfilesController.cs" />
     <Compile Include="Controllers\WellViolationsItemsController.cs" />
     <Compile Include="Controllers\WellViolationsController.cs" />
     <Compile Include="Controllers\WellVisitedsController.cs" />
+    <Compile Include="DataAccessBase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809220948240_init.cs" />
-    <Compile Include="Migrations\201809220948240_init.Designer.cs">
-      <DependentUpon>201809220948240_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809250825459_add otherType.cs" />
-    <Compile Include="Migrations\201809250825459_add otherType.Designer.cs">
-      <DependentUpon>201809250825459_add otherType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809250903089_add baseInfo.cs" />
-    <Compile Include="Migrations\201809250903089_add baseInfo.Designer.cs">
-      <DependentUpon>201809250903089_add baseInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809291231237_tmp.cs" />
-    <Compile Include="Migrations\201809291231237_tmp.Designer.cs">
-      <DependentUpon>201809291231237_tmp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809291252058_002.cs" />
-    <Compile Include="Migrations\201809291252058_002.Designer.cs">
-      <DependentUpon>201809291252058_002.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809300716345_003.cs" />
-    <Compile Include="Migrations\201809300716345_003.Designer.cs">
-      <DependentUpon>201809300716345_003.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810010852254_004.cs" />
-    <Compile Include="Migrations\201810010852254_004.Designer.cs">
-      <DependentUpon>201810010852254_004.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810021129109_005.cs" />
-    <Compile Include="Migrations\201810021129109_005.Designer.cs">
-      <DependentUpon>201810021129109_005.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810031237094_change model wellviolationsitems.cs" />
-    <Compile Include="Migrations\201810031237094_change model wellviolationsitems.Designer.cs">
-      <DependentUpon>201810031237094_change model wellviolationsitems.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810031246164_change2 model wellviolationsitems.cs" />
-    <Compile Include="Migrations\201810031246164_change2 model wellviolationsitems.Designer.cs">
-      <DependentUpon>201810031246164_change2 model wellviolationsitems.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810061102481_006.cs" />
-    <Compile Include="Migrations\201810061102481_006.Designer.cs">
-      <DependentUpon>201810061102481_006.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810070836183_007.cs" />
-    <Compile Include="Migrations\201810070836183_007.Designer.cs">
-      <DependentUpon>201810070836183_007.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810090714057_008.cs" />
-    <Compile Include="Migrations\201810090714057_008.Designer.cs">
-      <DependentUpon>201810090714057_008.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810090804052_009.cs" />
-    <Compile Include="Migrations\201810090804052_009.Designer.cs">
-      <DependentUpon>201810090804052_009.cs</DependentUpon>
+    <Compile Include="Migrations\201812240708494_addkarizID.cs" />
+    <Compile Include="Migrations\201812240708494_addkarizID.Designer.cs">
+      <DependentUpon>201812240708494_addkarizID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AreaStudy.cs" />
     <Compile Include="Models\Attachment.cs" />
+    <Compile Include="Models\BaseInfo.cs" />
+    <Compile Include="Models\City.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InspectionDepartments.cs" />
-    <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MeViewModels.cs" />
     <Compile Include="Models\OtherType.cs" />
     <Compile Include="Models\Plain.cs" />
+    <Compile Include="Models\ReportInfo.cs" />
     <Compile Include="Models\WellProfile.cs" />
     <Compile Include="Models\WellViolation.cs" />
     <Compile Include="Models\WellViolationsItems.cs" />
     <Compile Include="Models\WellVisited.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Reports\ReportTemplate.aspx.cs">
+      <DependentUpon>ReportTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportTemplate.aspx.designer.cs">
+      <DependentUpon>ReportTemplate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -332,6 +324,11 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\A.jpg" />
+    <Content Include="images\B.jpg" />
+    <Content Include="images\c.jpg" />
+    <Content Include="Reports\ReportTemplate.aspx" />
+    <Content Include="ReportViewerWebForm.aspx" />
     <Content Include="Scripts\axios.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -373,10 +370,36 @@
     <Content Include="Scripts\app\app.viewmodel.js" />
     <Content Include="Scripts\app\common.js" />
     <Content Include="Scripts\app\home.viewmodel.js" />
-    <Content Include="static\css\main.3743ec33.css" />
-    <Content Include="static\js\main.67f0b068.js" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="static\css\1.6d399e51.chunk.css" />
+    <Content Include="static\css\main.41ea253f.chunk.css" />
+    <Content Include="static\js\1.c93f4934.chunk.js" />
+    <Content Include="static\js\main.4268d339.chunk.js" />
+    <Content Include="static\js\runtime~main.229c360f.js" />
     <Content Include="static\media\fontawesome-webfont.912ec66d.svg" />
     <Content Include="static\media\Yekan.77c6c4d7.svg" />
+    <Content Include="static\out\css\AdminLTE.css" />
+    <Content Include="static\out\css\bootstrap.min.css" />
+    <Content Include="static\out\css\ionicons.min.css" />
+    <Content Include="static\out\css\ionicons\css\ionicons.min.css" />
+    <Content Include="static\out\css\ionicons\fonts\ionicons.svg" />
+    <Content Include="static\out\css\_all-skins.min.css" />
+    <Content Include="static\out\js\adminlte.min.js" />
+    <Content Include="static\out\js\bootstrap.min.js" />
+    <Content Include="static\out\js\jquery.min.js" />
+    <Content Include="static\out\js\jquery.slimscroll.min.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -414,8 +437,27 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="static\css\main.3743ec33.css.map" />
-    <Content Include="static\js\main.67f0b068.js.map" />
+    <Content Include="Views\Report\ReportTemplate.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="SSRSReports\form1.rdl" />
+    <Content Include="SSRSReports\Table16.rdl" />
+    <Content Include="SSRSReports\Table18.rdl" />
+    <Content Include="static\out\css\fonts\fontawesome-webfont.af7ae505.woff2" />
+    <Content Include="static\out\css\ionicons\fonts\ionicons.eot" />
+    <Content Include="static\out\css\ionicons\fonts\ionicons.ttf" />
+    <Content Include="static\out\css\ionicons\fonts\ionicons.woff" />
+    <Content Include="static\out\css\ionicons\fonts\ionicons.woff2" />
+    <Content Include="SSRSReports\form2.rdl" />
+    <Content Include="SSRSReports\form6.rdl" />
+    <Content Include="SSRSReports\ReportViolation.rdl" />
+    <Content Include="SSRSReports\Table14.rdl" />
+    <Content Include="SSRSReports\Table15.rdl" />
+    <Content Include="SSRSReports\Table19.rdl" />
+    <Content Include="static\css\1.6d399e51.chunk.css.map" />
+    <Content Include="static\css\main.41ea253f.chunk.css.map" />
+    <Content Include="static\js\1.c93f4934.chunk.js.map" />
+    <Content Include="static\js\main.4268d339.chunk.js.map" />
+    <Content Include="static\js\runtime~main.229c360f.js.map" />
     <Content Include="static\media\fontawesome-webfont.674f50d2.eot" />
     <Content Include="static\media\fontawesome-webfont.af7ae505.woff2" />
     <Content Include="static\media\fontawesome-webfont.b06871f2.ttf" />
@@ -426,7 +468,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="uploadedFiles\" />
+    <Folder Include="uploadedFiles\temp\" />
     <Folder Include="Views\InspectionDepartments\" />
   </ItemGroup>
   <ItemGroup>
@@ -438,47 +480,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809220948240_init.resx">
-      <DependentUpon>201809220948240_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809250825459_add otherType.resx">
-      <DependentUpon>201809250825459_add otherType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809250903089_add baseInfo.resx">
-      <DependentUpon>201809250903089_add baseInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809291231237_tmp.resx">
-      <DependentUpon>201809291231237_tmp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809291252058_002.resx">
-      <DependentUpon>201809291252058_002.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809300716345_003.resx">
-      <DependentUpon>201809300716345_003.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810010852254_004.resx">
-      <DependentUpon>201810010852254_004.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810021129109_005.resx">
-      <DependentUpon>201810021129109_005.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810031237094_change model wellviolationsitems.resx">
-      <DependentUpon>201810031237094_change model wellviolationsitems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810031246164_change2 model wellviolationsitems.resx">
-      <DependentUpon>201810031246164_change2 model wellviolationsitems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810061102481_006.resx">
-      <DependentUpon>201810061102481_006.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810070836183_007.resx">
-      <DependentUpon>201810070836183_007.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810090714057_008.resx">
-      <DependentUpon>201810090714057_008.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810090804052_009.resx">
-      <DependentUpon>201810090804052_009.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812240708494_addkarizID.resx">
+      <DependentUpon>201812240708494_addkarizID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

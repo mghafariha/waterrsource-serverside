@@ -20,7 +20,8 @@ namespace WaterResource.Controllers
          [Queryable()]
         public IQueryable<Plain> GetPlains()
         {
-            return db.Plains;
+          
+            return db.Plains.Include(a=>a.AreaStudy);
         }
 
         // GET api/Plain/5

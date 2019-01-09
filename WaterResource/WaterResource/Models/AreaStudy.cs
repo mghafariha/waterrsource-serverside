@@ -15,6 +15,12 @@ namespace WaterResource.Models
         [Required]
         public string Title { get; set; }
 
+        [DisplayName("شهرستان")]
+        [Required]
+        public int CityID { get; set; }
+        public City City { get; set; }
+
+
         [DisplayName("کد")]
         [Required]
         public string Code { get; set; }
@@ -23,8 +29,12 @@ namespace WaterResource.Models
         [Required]
         public string Kind { get; set; }
 
-        [DisplayName("وضعیت")]
+        [DisplayName("پایلوت")]
         [Required]
-        public string Status { get; set; }
+        public string Pilot { get; set; }
+
+        [DisplayName("کارشناس بازدید")]
+        //[Required]
+        public Guid VisitExpert { get; set; }
     }
 }

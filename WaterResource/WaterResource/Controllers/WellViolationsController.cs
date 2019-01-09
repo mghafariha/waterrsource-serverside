@@ -19,7 +19,17 @@ namespace WaterResource.Controllers
         // GET: api/WellViolations
         public IQueryable<WellViolation> GetWellViolations()
         {
-            return db.WellViolations;
+          
+          //  var x = db.WellViolations.Include(a => a.WellVisited).Include(a => a.WellVisited.WellProfile).Select(a => new { a.ID, a.DateFirstWarning, a.DeadlineReferralFirstWarning, a.FileFirstWarning, a.DateFile, a.MeetingFile, a.SecondWarningDate, a.DeadlineReferralSecondWarning, a.FileSecondWarning, a.DateExecuteOrder, a.ExecuteOrder, a.CheckFile, a.DateCheckFile, a.FileWarrant, a.DateFileWarrant, a.WellPosition, a.NumberInFraction, a.Violations, a.FileClosed, a.DateClosed, a.ExecutionFiles, a.SavingFiles, a.DateEnforcement, a.SavingAmount, a.ResultActions, a.Status, a.Description, a.WellVisited.WellProfile.Index });
+
+            return db.WellViolations.Include(a => a.WellVisited).Include(a => a.WellVisited.WellProfile);
+        }
+        public IQueryable<WellViolation> GetWellViolations(int count,int page)
+        {
+
+            //  var x = db.WellViolations.Include(a => a.WellVisited).Include(a => a.WellVisited.WellProfile).Select(a => new { a.ID, a.DateFirstWarning, a.DeadlineReferralFirstWarning, a.FileFirstWarning, a.DateFile, a.MeetingFile, a.SecondWarningDate, a.DeadlineReferralSecondWarning, a.FileSecondWarning, a.DateExecuteOrder, a.ExecuteOrder, a.CheckFile, a.DateCheckFile, a.FileWarrant, a.DateFileWarrant, a.WellPosition, a.NumberInFraction, a.Violations, a.FileClosed, a.DateClosed, a.ExecutionFiles, a.SavingFiles, a.DateEnforcement, a.SavingAmount, a.ResultActions, a.Status, a.Description, a.WellVisited.WellProfile.Index });
+
+            return db.WellViolations.Include(a => a.WellVisited).Include(a => a.WellVisited.WellProfile).OrderBy(a=>a.ID).Skip(count*(page-1)).Take(count);
         }
 
         // GET: api/WellViolations/5

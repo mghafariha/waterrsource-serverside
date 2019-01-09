@@ -13,8 +13,8 @@ namespace WaterResource.Models
 
 
         [DisplayName("تخلف چاه")]
-        
-        public int InfractionsWell { get; set; }
+        public int InfractionsWellID{ get; set; }
+        public WellViolation InfractionsWell { get; set; }
 
         [DisplayName("نوع تخلف")]
        

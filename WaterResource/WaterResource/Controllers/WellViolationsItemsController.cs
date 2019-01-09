@@ -19,7 +19,7 @@ namespace WaterResource.Controllers
         // GET: api/WellViolationItems
         public IQueryable<WellViolationsItems> GetWellViolationItems()
         {
-            return db.WellViolationItems;
+            return db.WellViolationItems.Include(a=>a.InfractionsWell);
         }
 
         // GET: api/WellViolationItems/5

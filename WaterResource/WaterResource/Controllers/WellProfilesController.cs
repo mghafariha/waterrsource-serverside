@@ -19,14 +19,18 @@ namespace WaterResource.Controllers
         // GET: api/WellProfiles
         public IQueryable<WellProfile> GetWellProfiles()
         {
-            return db.WellProfiles;
+            return db.WellProfiles.Include(a => a.City).Include(a => a.StudyArea).Include(a => a.Plain);
+        }
+        public IQueryable<WellProfile> GetWellProfiles(int count,int page)
+        {
+            return db.WellProfiles.Include(a => a.City).Include(a => a.StudyArea).Include(a => a.Plain).OrderBy(a=>a.ID).Skip(count * (page - 1)).Take(count);
         }
 
         // GET: api/WellProfiles/5
         [ResponseType(typeof(WellProfile))]
         public IHttpActionResult GetWellProfile(int id)
         {
-            WellProfile wellProfile = db.WellProfiles.Find(id);
+            WellProfile wellProfile = db.WellProfiles.Find(id);//.Include(a => a.City).Include(a => a.StudyArea).Include(a => a.Plain);
             if (wellProfile == null)
             {
                 return NotFound();
@@ -91,6 +95,7 @@ namespace WaterResource.Controllers
             {
                 return BadRequest(ModelState);
             }
+         
 
             db.WellProfiles.Add(wellProfile);
             db.SaveChanges();

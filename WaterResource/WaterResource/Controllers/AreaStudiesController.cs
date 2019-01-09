@@ -21,7 +21,7 @@ namespace WaterResource.Controllers
         public IQueryable<AreaStudy> GetAreaStudies()
         {
             return db.AreaStudies;
-        }
+         }
 
         // GET: api/AreaStudies/5
         [ResponseType(typeof(AreaStudy))]

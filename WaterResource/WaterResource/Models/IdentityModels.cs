@@ -25,21 +25,14 @@ namespace WaterResource.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            this.Configuration.LazyLoadingEnabled = false;
+            //this.Configuration.ProxyCreationEnabled = false;
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
-
-        public System.Data.Entity.DbSet<WaterResource.Models.WellProfile> WellProfiles { get; set; }
-
-        public System.Data.Entity.DbSet<WaterResource.Models.WellVisited> WellVisiteds { get; set; }
-
-        public System.Data.Entity.DbSet<WaterResource.Models.WellViolation> WellViolations { get; set; }
-
-        public System.Data.Entity.DbSet<WaterResource.Models.WellViolationsItems> WellViolationItems { get; set; }
-
         public System.Data.Entity.DbSet<WaterResource.Models.OtherType> OtherType { get; set; }
 
         public System.Data.Entity.DbSet<WaterResource.Models.AreaStudy> AreaStudies { get; set; }
@@ -48,6 +41,15 @@ namespace WaterResource.Models
 
         public System.Data.Entity.DbSet<WaterResource.Models.InspectionDepartments> InspectionDepartments { get; set; }
 
-        public System.Data.Entity.DbSet<WaterResource.Models.Item> Items { get; set; }
+        public System.Data.Entity.DbSet<WaterResource.Models.City> Cities { get; set; }
+        public System.Data.Entity.DbSet<WaterResource.Models.WellProfile> WellProfiles { get; set; }
+
+        public System.Data.Entity.DbSet<WaterResource.Models.WellVisited> WellVisiteds { get; set; }
+
+        public System.Data.Entity.DbSet<WaterResource.Models.WellViolation> WellViolations { get; set; }
+
+        public System.Data.Entity.DbSet<WaterResource.Models.WellViolationsItems> WellViolationItems { get; set; }
+
+
     }
 }
